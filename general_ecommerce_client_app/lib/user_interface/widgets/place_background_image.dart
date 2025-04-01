@@ -7,13 +7,11 @@ class PlaceBackgroundImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return Stack(
         children: [
           Image(image: AssetImage(imageAddress,), fit: BoxFit.cover,height: double.maxFinite, width: double.maxFinite,),
           child,
         ],
-      ),
-    );
+      );
   }
 }
