@@ -3,6 +3,8 @@ import 'package:general_ecommerce_client_app/user_interface/screens/sign_in.dart
 import 'package:general_ecommerce_client_app/user_interface/utilities/light_theme_color.dart';
 import 'package:general_ecommerce_client_app/user_interface/widgets/place_background_image.dart';
 
+import 'otp.dart';
+
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
@@ -69,7 +71,7 @@ class SignUp extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                        return SignIn();
+                        return Otp();
                       }));
                     },
                     child: Text("Sign up"),

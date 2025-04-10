@@ -50,9 +50,7 @@ class SignIn extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 7),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                      return SignIn();
-                    }));
+
                   },
                   child: Text("Sign in"),
                 ),
