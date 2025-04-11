@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:general_ecommerce_client_app/user_interface/screens/sign_in.dart';
+import 'package:general_ecommerce_client_app/state_holders/otp_timer_controller.dart';
 import 'package:general_ecommerce_client_app/user_interface/utilities/light_theme_color.dart';
 import 'package:general_ecommerce_client_app/user_interface/widgets/place_background_image.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import 'otp.dart';
 
@@ -70,6 +72,7 @@ class SignUp extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 7),
                   child: ElevatedButton(
                     onPressed: () {
+                      Get.find<OtpTimerController>().startTimer();
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
                         return Otp();
                       }));

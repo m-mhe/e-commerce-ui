@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:general_ecommerce_client_app/controller_bindings.dart';
 import 'package:general_ecommerce_client_app/user_interface/screens/sign_up.dart';
 import 'package:general_ecommerce_client_app/user_interface/utilities/light_theme_color.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      initialBinding: ControllerBindings(),
       title: "General E-Commerce",
       theme: ThemeData(
         inputDecorationTheme: InputDecorationTheme(
