@@ -16,93 +16,95 @@ class Otp extends StatelessWidget {
     return Scaffold(
       body: PlaceBackgroundImage(
         imageAddress: "asset/background_one.png",
-        child: Padding(
-          padding: EdgeInsets.only(
-            top: MediaQuery.sizeOf(context).height / 4,
-            right: 15,
-            left: 15,
-          ),
-          child: Column(
-            children: [
-              Text(
-                "Verify Code",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                  color: LightThemeColor.accentDarkOrange,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 2, bottom: 20),
-                child: Text(
-                  "Please, enter the verification code we just sent to your email.",
-                  textAlign: TextAlign.center,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: MediaQuery.sizeOf(context).height / 4,
+              right: 15,
+              left: 15,
+            ),
+            child: Column(
+              children: [
+                Text(
+                  "Verify Code",
                   style: TextStyle(
-                    fontSize: 16,
-                    color: LightThemeColor.accentDarkOrange.withAlpha(200),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.sizeOf(context).width / 8,
-                ),
-                child: PinCodeTextField(
-                  appContext: context,
-
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w500,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
                     color: LightThemeColor.accentDarkOrange,
                   ),
-                  enableActiveFill: true,
-                  length: 4,
-                  obscureText: true,
-                  blinkWhenObscuring: true,
-                  backgroundColor: Colors.transparent,
-                  pinTheme: PinTheme(
-                    shape: PinCodeFieldShape.box,
-                    fieldWidth: MediaQuery.sizeOf(context).width / 10,
-                    fieldHeight: (MediaQuery.sizeOf(context).width / 10) * 1.2,
-                    borderRadius: BorderRadius.circular(3),
-                    activeColor: LightThemeColor.accentOrange,
-                    activeFillColor: LightThemeColor.mainWhite,
-                    inactiveColor: LightThemeColor.accentOrange,
-                    inactiveFillColor: LightThemeColor.mainWhite,
-                    selectedColor: LightThemeColor.accentOrange,
-                    selectedFillColor: LightThemeColor.mainWhite,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 2, bottom: 20),
+                  child: Text(
+                    "Please, enter the verification code we just sent to your email.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: LightThemeColor.accentDarkOrange.withAlpha(200),
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15, bottom: 15),
-                child: ElevatedButton(onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                  return SignIn();
-                }));}, child: Text("Verify",)),
-              ),
-              GetBuilder<OtpTimerController>(
-                builder: (controller) {
-                  return Text("Code will expire in ${controller.remainingTime}s",textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 14,
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.sizeOf(context).width / 8,
+                  ),
+                  child: PinCodeTextField(
+                    appContext: context,
+          
+                    textStyle: TextStyle(
                       fontWeight: FontWeight.w500,
-                      color: LightThemeColor.accentDarkOrange.withAlpha(200),
-                    ),);
-                }
-              ),
-              GetBuilder<OtpTimerController>(
-                builder: (controller) {
-                  return TextButton(
-                    onPressed: () {
-                      if(controller.remainingTime == 0) controller.startTimer();
-                    },
-                    style: TextButton.styleFrom(
-                      foregroundColor: controller.remainingTime == 0? LightThemeColor.accentDarkOrange: Colors.transparent,
+                      color: LightThemeColor.accentDarkOrange,
                     ),
-                    child: Text("Resend code"),
-                  );
-                }
-              ),
-            ],
+                    enableActiveFill: true,
+                    length: 4,
+                    obscureText: true,
+                    blinkWhenObscuring: true,
+                    backgroundColor: Colors.transparent,
+                    pinTheme: PinTheme(
+                      shape: PinCodeFieldShape.box,
+                      fieldWidth: MediaQuery.sizeOf(context).width / 10,
+                      fieldHeight: (MediaQuery.sizeOf(context).width / 10) * 1.2,
+                      borderRadius: BorderRadius.circular(3),
+                      activeColor: LightThemeColor.accentOrange,
+                      activeFillColor: LightThemeColor.mainWhite,
+                      inactiveColor: LightThemeColor.accentOrange,
+                      inactiveFillColor: LightThemeColor.mainWhite,
+                      selectedColor: LightThemeColor.accentOrange,
+                      selectedFillColor: LightThemeColor.mainWhite,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15, bottom: 15),
+                  child: ElevatedButton(onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                    return SignIn();
+                  }));}, child: Text("Verify",)),
+                ),
+                GetBuilder<OtpTimerController>(
+                  builder: (controller) {
+                    return Text("Code will expire in ${controller.remainingTime}s",textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: LightThemeColor.accentDarkOrange.withAlpha(200),
+                      ),);
+                  }
+                ),
+                GetBuilder<OtpTimerController>(
+                  builder: (controller) {
+                    return TextButton(
+                      onPressed: () {
+                        if(controller.remainingTime == 0) controller.startTimer();
+                      },
+                      style: TextButton.styleFrom(
+                        foregroundColor: controller.remainingTime == 0? LightThemeColor.accentDarkOrange: Colors.transparent,
+                      ),
+                      child: Text("Resend code"),
+                    );
+                  }
+                ),
+              ],
+            ),
           ),
         ),
       ),

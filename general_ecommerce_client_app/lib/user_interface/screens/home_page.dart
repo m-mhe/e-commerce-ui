@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
         title: Text(
           "CMZ-SHOP",
           style: TextStyle(
-            color: LightThemeColor.accentOrange,
+            color: LightThemeColor.accentTwoOrange,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
                   hintText: "Search",
                   hintStyle: TextStyle(
                     fontWeight: FontWeight.w700,
-                    color: LightThemeColor.accentOrange.withAlpha(70),
+                    color: LightThemeColor.accentTwoOrange.withAlpha(70),
                   ),
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 5,
@@ -43,20 +43,20 @@ class HomePage extends StatelessWidget {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(7),
                     borderSide: BorderSide(
-                      color: LightThemeColor.accentOrange,
+                      color: LightThemeColor.accentTwoOrange,
                       width: 2,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(
-                      color: LightThemeColor.accentOrange,
+                      color: LightThemeColor.accentTwoOrange,
                       width: 2,
                     ),
                   ),
                   prefixIcon: Icon(
                     Icons.search,
-                    color: LightThemeColor.accentOrange,
+                    color: LightThemeColor.accentTwoOrange,
                     size: 26,
                   ),
                 ),
@@ -105,7 +105,7 @@ class HomePage extends StatelessWidget {
                             radius: 5,
                             backgroundColor:
                                 index == i
-                                    ? LightThemeColor.accentOrange
+                                    ? LightThemeColor.accentTwoOrange
                                     : Colors.grey.withAlpha(100),
                           ),
                         ),
