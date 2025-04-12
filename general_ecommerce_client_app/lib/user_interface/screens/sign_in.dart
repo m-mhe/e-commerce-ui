@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:general_ecommerce_client_app/user_interface/screens/home_page.dart';
 import 'package:general_ecommerce_client_app/user_interface/widgets/place_background_image.dart';
-
+import 'package:get/get.dart';
 import '../utilities/light_theme_color.dart';
 
 class SignIn extends StatelessWidget {
@@ -50,7 +51,7 @@ class SignIn extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 7),
                 child: ElevatedButton(
                   onPressed: () {
-
+                    Get.off(HomePage());
                   },
                   child: Text("Sign in"),
                 ),
