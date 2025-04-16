@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:general_ecommerce_client_app/state_holders/flash_sale_timer_controller.dart';
 import 'package:general_ecommerce_client_app/user_interface/utilities/light_theme_color.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -163,6 +165,126 @@ class HomePage extends StatelessWidget {
                           },
                         ),
                       ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Flash Sale",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: LightThemeColor.accentTwoOrange,
+                      ),
+                    ),
+                    GetBuilder<FlashSaleTimerController>(
+                      builder: (controller) {
+                        return Row(
+                          children: [
+                            Container(
+                              height: MediaQuery.sizeOf(context).width / 11,
+                              width: MediaQuery.sizeOf(context).width / 12,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                color: LightThemeColor.accentOrange.withAlpha(
+                                  90,
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  controller.remainingHour.toString().padLeft(
+                                    2,
+                                    '0',
+                                  ),
+                                  style: TextStyle(
+                                    color: LightThemeColor.accentDarkOrange,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 5,
+                              ),
+                              child: Text(
+                                ":",
+                                style: TextStyle(
+                                  color: LightThemeColor.accentDarkOrange,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: MediaQuery.sizeOf(context).width / 11,
+                              width: MediaQuery.sizeOf(context).width / 12,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                color: LightThemeColor.accentOrange.withAlpha(
+                                  90,
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  controller.remainingMinute.toString().padLeft(
+                                    2,
+                                    '0',
+                                  ),
+                                  style: TextStyle(
+                                    color: LightThemeColor.accentDarkOrange,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 5,
+                              ),
+                              child: Text(
+                                ":",
+                                style: TextStyle(
+                                  color: LightThemeColor.accentDarkOrange,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: MediaQuery.sizeOf(context).width / 11,
+                              width: MediaQuery.sizeOf(context).width / 12,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                color: LightThemeColor.accentOrange.withAlpha(
+                                  90,
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  controller.remainingSecond.toString().padLeft(
+                                    2,
+                                    '0',
+                                  ),
+                                  style: TextStyle(
+                                    color: LightThemeColor.accentDarkOrange,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
                     ),
                   ],
                 ),
