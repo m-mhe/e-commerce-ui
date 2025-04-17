@@ -301,7 +301,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Center(child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("All", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                            child: Text("All", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
                           )),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(360),
@@ -313,7 +313,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Center(child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Trending", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                            child: Text("Trending", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
                           )),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
@@ -325,7 +325,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Center(child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Best Sale", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                            child: Text("Bestseller", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
                           )),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
@@ -337,7 +337,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Center(child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Popular", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                            child: Text("Popular", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
                           )),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
@@ -349,7 +349,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Center(child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Newest", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                            child: Text("Newest", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
                           )),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
@@ -361,7 +361,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Center(child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Men Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                            child: Text("Men Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
                           )),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
@@ -374,7 +374,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Center(child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Women Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                            child: Text("Women Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
                           )),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
@@ -387,7 +387,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: Center(child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Kids Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                            child: Text("Kids Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
                           )),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
