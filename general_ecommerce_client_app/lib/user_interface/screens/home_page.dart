@@ -142,7 +142,7 @@ class HomePage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 10),
                       child: SizedBox(
-                        height: 80,
+                        height: 70,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
@@ -151,8 +151,8 @@ class HomePage extends StatelessWidget {
                             return Padding(
                               padding: const EdgeInsets.only(right: 16),
                               child: Container(
-                                height: 80,
-                                width: 80,
+                                height: 70,
+                                width: 70,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(7),
                                   image: DecorationImage(
@@ -289,6 +289,116 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
+              Padding(padding: EdgeInsets.only(bottom: 10),
+                child: SizedBox(
+                  height: 35,
+                  child: ListView(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Container(
+                          child: Center(child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text("All", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                          )),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(360),
+                            border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Container(
+                          child: Center(child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text("Trending", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                          )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Container(
+                          child: Center(child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text("Best Sale", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                          )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Container(
+                          child: Center(child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text("Popular", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                          )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Container(
+                          child: Center(child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text("Newest", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                          )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Container(
+                          child: Center(child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text("Men Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                          )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Container(
+                          child: Center(child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text("Women Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                          )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Container(
+                          child: Center(child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text("Kids Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w600, fontSize: 16),),
+                          )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
