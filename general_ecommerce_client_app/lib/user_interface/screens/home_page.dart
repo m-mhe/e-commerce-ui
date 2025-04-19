@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:general_ecommerce_client_app/state_holders/flash_sale_categories_controller.dart';
 import 'package:general_ecommerce_client_app/state_holders/flash_sale_timer_controller.dart';
 import 'package:general_ecommerce_client_app/user_interface/utilities/light_theme_color.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
@@ -116,7 +117,7 @@ class HomePage extends StatelessWidget {
                 },
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 16),
+                padding: EdgeInsets.symmetric(vertical: 20),
                 child: Column(
                   children: [
                     Row(
@@ -289,116 +290,372 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(padding: EdgeInsets.only(bottom: 10),
+              Padding(
+                padding: EdgeInsets.only(bottom: 10),
                 child: SizedBox(
                   height: 35,
-                  child: ListView(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          child: Center(child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("All", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
-                          )),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(360),
-                            border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                  child: GetBuilder<FlashSaleCategoriesController>(
+                    builder: (controller) {
+                      return ListView(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: InkWell(
+                              onTap: () {
+                                controller.changeCategory(categoryNumber: 0);
+                              },
+                              child: Container(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Text(
+                                      "All",
+                                      style: TextStyle(
+                                        color:
+                                            controller.categoryNumber == 0
+                                                ? Colors.white
+                                                : LightThemeColor.dark,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                      controller.categoryNumber == 0
+                                          ? LightThemeColor.accentTwoOrange
+                                          : Colors.white,
+                                  borderRadius: BorderRadius.circular(360),
+                                  border: Border.all(
+                                    color:
+                                        controller.categoryNumber == 0
+                                            ? LightThemeColor.accentTwoOrange
+                                            : LightThemeColor.dark.withAlpha(
+                                              70,
+                                            ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          child: Center(child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Trending", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
-                          )),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: InkWell(
+                              onTap:(){
+                                controller.changeCategory(categoryNumber: 1);
+                              },
+                              child: Container(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Text(
+                                      "Trending",
+                                      style: TextStyle(
+                                        color:
+                                        controller.categoryNumber == 1
+                                            ? Colors.white
+                                            : LightThemeColor.dark,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                  controller.categoryNumber == 1
+                                      ? LightThemeColor.accentTwoOrange
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(360),
+                                  border: Border.all(
+                                    color:
+                                    controller.categoryNumber == 1
+                                        ? LightThemeColor.accentTwoOrange
+                                        : LightThemeColor.dark.withAlpha(
+                                      70,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          child: Center(child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Bestseller", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
-                          )),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: InkWell(
+                              onTap:(){
+                                controller.changeCategory(categoryNumber: 2);
+                              },
+                              child: Container(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Text(
+                                      "Bestseller",
+                                      style: TextStyle(
+                                        color:
+                                        controller.categoryNumber == 2
+                                            ? Colors.white
+                                            : LightThemeColor.dark,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                  controller.categoryNumber == 2
+                                      ? LightThemeColor.accentTwoOrange
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(360),
+                                  border: Border.all(
+                                    color:
+                                    controller.categoryNumber == 2
+                                        ? LightThemeColor.accentTwoOrange
+                                        : LightThemeColor.dark.withAlpha(
+                                      70,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          child: Center(child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Popular", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
-                          )),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: InkWell(
+                              onTap:(){
+                                controller.changeCategory(categoryNumber: 3);
+                              },
+                              child: Container(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Text(
+                                      "Popular",
+                                      style: TextStyle(
+                                        color:
+                                        controller.categoryNumber == 3
+                                            ? Colors.white
+                                            : LightThemeColor.dark,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                  controller.categoryNumber == 3
+                                      ? LightThemeColor.accentTwoOrange
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(360),
+                                  border: Border.all(
+                                    color:
+                                    controller.categoryNumber == 3
+                                        ? LightThemeColor.accentTwoOrange
+                                        : LightThemeColor.dark.withAlpha(
+                                      70,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          child: Center(child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Newest", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
-                          )),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: InkWell(
+                              onTap:(){
+                                controller.changeCategory(categoryNumber: 4);
+                              },
+                              child: Container(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Text(
+                                      "Newest",
+                                      style: TextStyle(
+                                        color:
+                                        controller.categoryNumber == 4
+                                            ? Colors.white
+                                            : LightThemeColor.dark,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                  controller.categoryNumber == 4
+                                      ? LightThemeColor.accentTwoOrange
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(360),
+                                  border: Border.all(
+                                    color:
+                                    controller.categoryNumber == 4
+                                        ? LightThemeColor.accentTwoOrange
+                                        : LightThemeColor.dark.withAlpha(
+                                      70,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          child: Center(child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Men Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
-                          )),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: InkWell(
+                              onTap:(){
+                                controller.changeCategory(categoryNumber: 5);
+                              },
+                              child: Container(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Text(
+                                      "Men Collection",
+                                      style: TextStyle(
+                                        color:
+                                        controller.categoryNumber == 5
+                                            ? Colors.white
+                                            : LightThemeColor.dark,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                  controller.categoryNumber == 5
+                                      ? LightThemeColor.accentTwoOrange
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(360),
+                                  border: Border.all(
+                                    color:
+                                    controller.categoryNumber == 5
+                                        ? LightThemeColor.accentTwoOrange
+                                        : LightThemeColor.dark.withAlpha(
+                                      70,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          child: Center(child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Women Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
-                          )),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: InkWell(
+                              onTap:(){controller.changeCategory(categoryNumber: 6);},
+                              child: Container(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Text(
+                                      "Women Collection",
+                                      style: TextStyle(
+                                        color:
+                                        controller.categoryNumber == 6
+                                            ? Colors.white
+                                            : LightThemeColor.dark,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                  controller.categoryNumber == 6
+                                      ? LightThemeColor.accentTwoOrange
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(360),
+                                  border: Border.all(
+                                    color:
+                                    controller.categoryNumber == 6
+                                        ? LightThemeColor.accentTwoOrange
+                                        : LightThemeColor.dark.withAlpha(
+                                      70,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 5),
-                        child: Container(
-                          child: Center(child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text("Kids Collection", style: TextStyle(color: LightThemeColor.dark, fontWeight: FontWeight.w500, fontSize: 16),),
-                          )),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              border: Border.all(color: LightThemeColor.dark.withAlpha(70), width: 1.5)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: InkWell(
+                              onTap:(){
+                                controller.changeCategory(categoryNumber: 7);
+                              },
+                              child: Container(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                    child: Text(
+                                      "Kids Collection",
+                                      style: TextStyle(
+                                        color:
+                                        controller.categoryNumber == 7
+                                            ? Colors.white
+                                            : LightThemeColor.dark,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color:
+                                  controller.categoryNumber == 7
+                                      ? LightThemeColor.accentTwoOrange
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(360),
+                                  border: Border.all(
+                                    color:
+                                    controller.categoryNumber == 7
+                                        ? LightThemeColor.accentTwoOrange
+                                        : LightThemeColor.dark.withAlpha(
+                                      70,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ],
+                        ],
+                      );
+                    },
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
