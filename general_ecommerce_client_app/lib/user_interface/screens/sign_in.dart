@@ -4,6 +4,7 @@ import 'package:general_ecommerce_client_app/user_interface/screens/home_page.da
 import 'package:general_ecommerce_client_app/user_interface/widgets/place_background_image.dart';
 import 'package:get/get.dart';
 import '../utilities/light_theme_color.dart';
+import '../widgets/nav_bar.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -62,7 +63,7 @@ class SignIn extends StatelessWidget {
                         remainingMinute: 2,
                         remainingSecond: 60,
                       );
-                      Get.off(HomePage());
+                      Get.off(NavBar());
                     },
                     child: Text("Sign in"),
                   ),
