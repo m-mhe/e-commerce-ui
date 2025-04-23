@@ -15,16 +15,25 @@ class MyApp extends StatelessWidget {
       title: "General E-Commerce",
       theme: ThemeData(
         inputDecorationTheme: InputDecorationTheme(
-          hintStyle: TextStyle(fontWeight: FontWeight.w700, color: LightThemeColor.accentDarkOrange),
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.w700,
+            color: LightThemeColor.accentDarkOrange,
+          ),
           filled: true,
           fillColor: LightThemeColor.mainWhite,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(7),
-            borderSide: BorderSide(color: LightThemeColor.accentOrange, width: 2)
+            borderSide: BorderSide(
+              color: LightThemeColor.accentOrange,
+              width: 2,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: LightThemeColor.accentOrange, width: 2)
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: LightThemeColor.accentOrange,
+              width: 2,
+            ),
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
@@ -35,9 +44,15 @@ class MyApp extends StatelessWidget {
             textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
-            )
-          )
-        )
+            ),
+          ),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Colors.white,
+          selectedItemColor: LightThemeColor.accentTwoOrange,
+          unselectedItemColor: LightThemeColor.accentTwoOrange,
+          type: BottomNavigationBarType.fixed,
+        ),
       ),
       home: SignUp(),
     );
